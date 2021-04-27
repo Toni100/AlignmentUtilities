@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["AlignmentChecker`"];
+BeginPackage["AlignmentUtilities`"];
 
 
 UnalignmentReport::usage = "UnalignmentReport[{assoc11, ...}, {assoc21, ...}, alignmentKey, valueKey] returns an association whose keys are the values of alignmentKey in the associj and whose values are the complements of values of valueKey.";

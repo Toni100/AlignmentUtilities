@@ -1,9 +1,9 @@
-# alignmentchecker
+# AlignmentUtilities
 
 ## Setup
 ```Mathematica
-PrependTo[$Path, "~/git/alignmentchecker"];
-<< AlignmentChecker`
+PrependTo[$Path, "~/git/AlignmentUtilities"];
+<< AlignmentUtilities`
 ```
 
 ## Example

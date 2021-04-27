@@ -1,4 +1,4 @@
-Needs["AlignmentChecker`"];
+Needs["AlignmentUtilities`"];
 
 VerificationTest[
     UnalignmentReport[
