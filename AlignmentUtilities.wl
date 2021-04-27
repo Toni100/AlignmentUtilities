@@ -3,10 +3,44 @@
 BeginPackage["AlignmentUtilities`"];
 
 
+SuggestAlignments::usage = "SuggestAlignments[from, to, alignmentKey, valueKey] suggests alignments from one list of associations to another one.";
 UnalignmentReport::usage = "UnalignmentReport[{assoc11, ...}, {assoc21, ...}, alignmentKey, valueKey] returns an association whose keys are the values of alignmentKey in the associj and whose values are the complements of values of valueKey.";
 
 
 Begin["`Private`"];
+
+
+SuggestAlignments[
+    from : {___Association},
+    to : {___Association},
+    alignmentKey_,
+    valueKey_
+] := GroupBy[
+    JoinAcross[
+        Cases[
+            DeleteCases[
+                to,
+                KeyValuePattern[
+                    alignmentKey -> Alternatives @@ DeleteMissing[
+                        from[[All, alignmentKey]]
+                    ]
+                ]
+            ],
+            KeyValuePattern[valueKey -> _]
+        ],
+        Cases[
+            DeleteCases[
+                from,
+                KeyValuePattern[alignmentKey -> _]
+            ],
+            KeyValuePattern[valueKey -> _]
+        ],
+        Key[valueKey],
+        KeyCollisionFunction -> ({{"from", #}, {"to", #}}&)
+    ],
+    Key[alignmentKey] -> KeyDrop[alignmentKey],
+    DeleteDuplicates
+];
 
 
 UnalignmentReport[
