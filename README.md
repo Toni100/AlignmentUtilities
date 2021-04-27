@@ -6,7 +6,7 @@ PrependTo[$Path, "~/git/AlignmentUtilities"];
 << AlignmentUtilities`
 ```
 
-## Example
+## UnalignmentReport
 ```Mathematica
 In[]:= data1 = {
     <|"key" -> "a", "value" -> 1, "label" -> "A"|>,
@@ -22,4 +22,21 @@ In[]:= data2 = {
 In[]:= UnalignmentReport[data1, data2, "key", "value"]
 
 Out[]= <|"b" -> {{2}, {3}}, "c" -> {{5}, Missing["NotAligned"]}|>
+```
+
+## SuggestAlignments
+```Mathematica
+In[]:= from = {
+    <|"WikidataID" -> "Q1", "ExampleOntologyID" -> "a", "Label" -> "universe", "value" -> 123|>,
+    <|"WikidataID" -> "Q2", "Label" -> "Earth", "value" -> 444|>
+};
+
+In[]:= to = {
+    <|"ExampleOntologyID" -> "a", "LabelDE" -> "Universum", "value" -> 123|>,
+    <|"ExampleOntologyID" -> "b", "LabelDE" -> "Erde", "value" -> 444|>
+};
+
+In[13]:= SuggestAlignments[from, to, "ExampleOntologyID", "value"]
+
+Out[13]= <|"b" -> {<|"LabelDE" -> "Erde", "value" -> 444, "WikidataID" -> "Q2", "Label" -> "Earth"|>}|>
 ```
