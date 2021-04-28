@@ -36,7 +36,7 @@ SuggestAlignments[
             KeyValuePattern[valueKey -> _]
         ],
         Key[valueKey],
-        KeyCollisionFunction -> ({{"from", #}, {"to", #}}&)
+        KeyCollisionFunction -> ({{"from", #}, {"to", #}} &)
     ],
     Key[alignmentKey] -> KeyDrop[alignmentKey],
     DeleteDuplicates
