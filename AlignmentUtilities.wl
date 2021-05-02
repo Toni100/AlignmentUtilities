@@ -52,8 +52,8 @@ UnalignmentReport[
     Module[
         {g1, g2},
         {g1, g2} = GroupBy[
-            Select[#, KeyExistsQ[alignmentKey]],
-            Key[alignmentKey] -> Key[valueKey],
+            Cases[#, KeyValuePattern[# -> _ & /@ Flatten[{alignmentKey}]]],
+            Lookup[alignmentKey] -> Key[valueKey],
             DeleteMissing
         ] & /@ {list1, list2};
         {g1, g2} = KeyUnion[
