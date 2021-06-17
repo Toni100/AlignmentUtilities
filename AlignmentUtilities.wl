@@ -44,8 +44,10 @@ SuggestAlignments[
 
 
 UnalignmentReport[
-    list1 : {___Association},
-    list2 : {___Association},
+    {
+        list1 : {___Association},
+        list2 : {___Association}
+    },
     alignmentKey_,
     valueKey_
 ] := DeleteCases[

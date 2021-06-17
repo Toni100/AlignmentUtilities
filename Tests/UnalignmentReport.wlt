@@ -2,8 +2,10 @@ Needs["AlignmentUtilities`"];
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "value" -> 1|>},
-        {<|"key" -> "a", "value" -> 1|>},
+        {
+            {<|"key" -> "a", "value" -> 1|>},
+            {<|"key" -> "a", "value" -> 1|>}
+        },
         "key",
         "value"
     ],
@@ -12,8 +14,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "value" -> 1|>},
-        {<|"key" -> "a", "value" -> 2|>},
+        {
+            {<|"key" -> "a", "value" -> 1|>},
+            {<|"key" -> "a", "value" -> 2|>}
+        },
         "key",
         "value"
     ],
@@ -22,8 +26,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "value" -> 1|>},
-        {<|"key" -> "a"|>},
+        {
+            {<|"key" -> "a", "value" -> 1|>},
+            {<|"key" -> "a"|>}
+        },
         "key",
         "value"
     ],
@@ -32,8 +38,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "value" -> 1|>},
-        {<||>},
+        {
+            {<|"key" -> "a", "value" -> 1|>},
+            {<||>}
+        },
         "key",
         "value"
     ],
@@ -42,8 +50,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
-        {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
+        {
+            {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
+            {<|"key" -> "a", "anno" -> "x", "value" -> 1|>}
+        },
         {"key", "anno"},
         "value"
     ],
@@ -52,8 +62,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
-        {<|"key" -> "a", "anno" -> "x", "value" -> 2|>},
+        {
+            {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
+            {<|"key" -> "a", "anno" -> "x", "value" -> 2|>}
+        },
         {"key", "anno"},
         "value"
     ],
@@ -62,8 +74,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
-        {<|"key" -> "a", "anno" -> "y", "value" -> 1|>},
+        {
+            {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
+            {<|"key" -> "a", "anno" -> "y", "value" -> 1|>}
+        },
         {"key", "anno"},
         "value"
     ],
@@ -75,8 +89,10 @@ VerificationTest[
 
 VerificationTest[
     UnalignmentReport[
-        {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
-        {<|"key" -> "a", "anno" -> "y", "value" -> 2|>},
+        {
+            {<|"key" -> "a", "anno" -> "x", "value" -> 1|>},
+            {<|"key" -> "a", "anno" -> "y", "value" -> 2|>}
+        },
         {"key", "anno"},
         "value"
     ],
